@@ -1,0 +1,139 @@
+mql5
+//+------------------------------------------------------------------+
+//|                                                   Gann Pivot Levels|
+//|                                            Developer: Forex Robot Easy Team|
+//|                                            Website: forexroboteasy.com|
+//+------------------------------------------------------------------+
+
+// Gann Pivot Levels Calculation
+double CalculatePivotLevel(int level, double previousHigh, double previousLow, double previousClose)
+{
+    double pivotLevel;
+    
+    switch(level)
+    {
+        case 0:
+            pivotLevel = (previousHigh + previousLow + previousClose) / 3;
+            break;
+        case 1:
+            pivotLevel = (previousHigh + previousLow) / 2;
+            break;
+        case 2:
+            pivotLevel = previousHigh - previousLow + previousClose;
+            break;
+        case 3:
+            pivotLevel = 2 * previousHigh - previousLow;
+            break;
+        case 4:
+            pivotLevel = 2 * previousLow - previousHigh;
+            break;
+        default:
+            pivotLevel = 0;
+    }
+    
+    return pivotLevel;
+}
+
+// Support for Trading Strategies
+bool IsScalpingStrategy()
+{
+    // Check if scalping strategy is enabled
+    return true;
+}
+
+bool IsDayTradingStrategy()
+{
+    // Check if day trading strategy is enabled
+    return false;
+}
+
+// Technical Analysis Tools
+void AnalyzeMarketTrends()
+{
+    // Implement code to analyze market trends
+}
+
+void IdentifyPatterns()
+{
+    // Implement code to identify patterns
+}
+
+void ProvideRealTimeData()
+{
+    // Implement code to provide real-time data
+}
+
+// User-Friendly Interface
+void CreateUserInterface()
+{
+    // Implement code to create user interface
+}
+
+// Performance Optimization
+void OptimizePerformance()
+{
+    // Implement code to optimize performance
+}
+
+// Entry point of the program
+int OnInit()
+{
+    // Calculate pivot levels
+    double previousHigh = High[1];
+    double previousLow = Low[1];
+    double previousClose = Close[1];
+    
+    double pivotLevel0 = CalculatePivotLevel(0, previousHigh, previousLow, previousClose);
+    double pivotLevel1 = CalculatePivotLevel(1, previousHigh, previousLow, previousClose);
+    double pivotLevel2 = CalculatePivotLevel(2, previousHigh, previousLow, previousClose);
+    double pivotLevel3 = CalculatePivotLevel(3, previousHigh, previousLow, previousClose);
+    double pivotLevel4 = CalculatePivotLevel(4, previousHigh, previousLow, previousClose);
+    
+    // Check trading strategies
+    if (IsScalpingStrategy())
+    {
+        // Implement code for scalping strategy
+    }
+    
+    if (IsDayTradingStrategy())
+    {
+        // Implement code for day trading strategy
+    }
+    
+    // Analyze market trends
+    AnalyzeMarketTrends();
+    
+    // Identify patterns
+    IdentifyPatterns();
+    
+    // Provide real-time data
+    ProvideRealTimeData();
+    
+    // Create user interface
+    CreateUserInterface();
+    
+    // Optimize performance
+    OptimizePerformance();
+    
+    return(INIT_SUCCEEDED);
+}
+
+void OnDeinit(const int reason)
+{
+    // Perform cleanup tasks before program termination
+}
+
+void OnTick()
+{
+    // Implement code to handle tick events
+}
+
+void OnTrade()
+{
+    // Implement code to handle trade events
+}
+
+void OnTimer()
+{
+    // Implement code to handle timer events
+}
